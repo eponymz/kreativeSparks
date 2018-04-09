@@ -6,7 +6,7 @@ import Center from 'react-center';
 import '../css/Header.css';
 import '../css/Prerelease.css';
 
-class DockIt extends Component {
+class BackDash extends Component {
   renderContent() {
     switch (this.props.auth) {
       case null:
@@ -16,16 +16,13 @@ class DockIt extends Component {
       default:
         return (
           <div>
-            <div className="content-title">
-              <h3 style={{ textAlign: 'center' }}>Docker Commands</h3>
-            </div>
             <div>
               <Center>
                 <Link
-                  to={this.props.auth ? '/z/pre-release/dockinit' : '/'}
-                  className="no-underline relic-button"
+                  to={this.props.auth ? '/z/dashboard' : '/'}
+                  className="no-underline relic-button-collapse"
                 >
-                  COPY && PASTE BUTTONS HERE
+                  † B A C K †
                 </Link>
               </Center>
             </div>
@@ -43,4 +40,4 @@ function mapStateToProps({ auth }) {
   return { auth };
 }
 
-export default connect(mapStateToProps)(DockIt);
+export default connect(mapStateToProps)(BackDash);
